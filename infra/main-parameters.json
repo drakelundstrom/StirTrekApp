@@ -6,10 +6,10 @@
       "value": "StirTrekTestKv"
     },
     "functionAppName": {
-      "value": "StirTrekTestFunctionApp"
+      "value": "DrakeStirTrekApi"
     },
     "functionAppHostingPlanName": {
-      "value": "StirTrekTestFunctionHostingPlan"
+      "value": "DrakeStirTrekApiHostingPlan"
     },
     "storageAccountName": {
       "value": "strirtrektestdatabase"
