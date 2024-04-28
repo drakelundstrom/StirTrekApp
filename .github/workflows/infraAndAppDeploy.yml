@@ -76,7 +76,7 @@ jobs:
 
   deploy-front-end:
     name: deploy react app
-    needs: build-app
+    needs: build-front-end
     runs-on: ubuntu-latest
     steps:
       - name: Log in to Azure
@@ -93,9 +93,9 @@ jobs:
           app-name: DrakeHasTheBestTickTackToeApp123
           package: ./frontend-app
 
-  build-and-deploy:
+  build-and-deploy-back-end:
     runs-on: windows-latest # For Linux, use ubuntu-latest
-    environment: dev
+    needs: deploy-front-end
     steps:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@v4
