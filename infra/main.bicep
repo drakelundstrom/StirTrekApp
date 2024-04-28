@@ -51,6 +51,15 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
         }
         tenantId: subscription().tenantId
       }
+      {
+        objectId: appService.identity.principalId
+        permissions: {
+          secrets: [
+            'all'
+          ]
+        }
+        tenantId: subscription().tenantId
+      }
     ]
   }
 }
