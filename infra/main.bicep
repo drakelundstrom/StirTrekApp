@@ -65,9 +65,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
       }
     ]
   }
-  dependsOn: [
-    appService
-  ]
 }
 
 module azureFunction 'azure-function-module.bicep' = {
