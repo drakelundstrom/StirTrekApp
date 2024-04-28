@@ -23,7 +23,6 @@ namespace Company.Function
             var cosmosConnectionString = Environment.GetEnvironmentVariable("databaseConnectionString");
             var cosmos = new CosmosClient(cosmosConnectionString);
             var emailsContainer = cosmos.GetContainer("EmailForwarding", "ContactInfoAndRequests");
-
             try
             {
                 // Get the contacts for the district.  Resturn 404 if none are found.
