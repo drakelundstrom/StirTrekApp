@@ -28,6 +28,7 @@ namespace Company.Function
                 // Get the contacts for the district.  Resturn 404 if none are found.
                 var query = new QueryDefinition("SELECT TOP 1 * FROM c WHERE c.Type='Message'");
                 var messages = await emailsContainer.GetItemQueryIterator<Message>(query).ReadNextAsync();
+                
                 if (messages.Count == 0)
                 {
                     return new NotFoundResult();
