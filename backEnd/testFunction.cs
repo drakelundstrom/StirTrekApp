@@ -22,7 +22,7 @@ namespace Company.Function
        // get secrets to access cosmos db and set up cosmos db client
             var cosmosConnectionString = Environment.GetEnvironmentVariable("databaseConnectionString");
             var cosmos = new CosmosClient(cosmosConnectionString);
-            var emailsContainer = cosmos.GetContainer("EmailForwarding", "ContactInfoAndRequests");
+            var emailsContainer = cosmos.GetContainer("freedatabase", "messages");
             try
             {
                 // Get the contacts for the district.  Resturn 404 if none are found.

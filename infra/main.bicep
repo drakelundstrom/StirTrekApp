@@ -29,6 +29,9 @@ resource appService 'Microsoft.Web/sites@2020-06-01' = {
       ]
     }
   }
+  identity: {
+    type: 'SystemAssigned'
+  }
 }
 
 resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
@@ -62,6 +65,9 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
       }
     ]
   }
+  dependsOn: [
+    appService
+  ]
 }
 
 module azureFunction 'azure-function-module.bicep' = {

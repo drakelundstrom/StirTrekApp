@@ -28,6 +28,10 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
           value: reference('microsoft.insights/components/${functionAppName}', '2015-05-01').InstrumentationKey
         }
         {
+          name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
+          value: reference('microsoft.insights/components/${functionAppName}', '2015-05-01').ConnectionString
+        }
+        {
           name: 'databaseConnectionString'
           value: '@Microsoft.KeyVault(VaultName=${kvName};SecretName=databaseConnectionString)'
         }
@@ -39,6 +43,9 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
   identity: {
     type: 'SystemAssigned'
   }
+  dependsOn: [
+    applicationInsights
+  ]
 }
 
 resource hostingPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
@@ -59,6 +66,19 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   sku: {
     name: 'Standard_LRS'
   }
+}
+
+resource applicationInsights 'microsoft.insights/components@2020-02-02-preview' = {
+  name: functionAppName
+  location: location
+  tags: {}
+  kind: 'web'
+  properties: {
+    Request_Source: 'IbizaWebAppExtensionCreate'
+    Flow_Type: 'Redfield'
+    Application_Type: 'web'
+  }
+  dependsOn: []
 }
 
 output functionIdentity string = functionApp.identity.principalId
