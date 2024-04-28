@@ -41,7 +41,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           scope: resourcegroup
-          resourceGroupName: "IacReferenceForCodeAlong"
+          resourceGroupName: "StirTrekAuto"
           deploymentMode: incremental
           template: ./infra/main.bicep
           parameters: ./infra/main.parameters.json
@@ -90,7 +90,7 @@ jobs:
         id: deploy-to-web-app
         uses: azure/webapps-deploy@v2
         with:
-          app-name: DrakeHasTheBestTickTackToeApp123
+          app-name: StirTrekTestFrontEnd
           package: ./frontend-app
 
   build-and-deploy-back-end:
