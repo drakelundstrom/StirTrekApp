@@ -48,7 +48,7 @@ jobs:
 
   build-front-end:
     name: build react app
-    # needs: build-infrastructure
+    needs: build-infrastructure
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -127,4 +127,4 @@ jobs:
         id: fa
         with:
           app-name: DrakeStirTrekApi
-          package: "DrakeStirTrekApi/backEnd/output"
+          package: "backEnd/output"
