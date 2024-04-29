@@ -70,7 +70,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: frontend-app
-          path: "frontEnd/my-react-app/build"
+          path: "frontEnd/my-react-app/dist"
           if-no-files-found: error
           retention-days: 30
 
