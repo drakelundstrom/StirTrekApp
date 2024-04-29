@@ -66,12 +66,12 @@ jobs:
           npm install
           npm run build
 
-      - name: npm install and build
+      - name: check files
         run: |
           ls
+          cd frontEnd 
           cd my-react-app
-          npm install
-          npm run build
+          ls
 
       - name: upload build artifacts
         uses: actions/upload-artifact@v2.2.4
