@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "DrakeStirTrekApi": {
+    "api": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7137",
+      "commandLineArgs": "--port 7011",
       "launchBrowser": false
     }
   }
