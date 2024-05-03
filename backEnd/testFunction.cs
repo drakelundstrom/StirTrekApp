@@ -34,6 +34,7 @@ namespace Company.Function
                     return new NotFoundResult();
                 } 
                 return new OkObjectResult(messages);
+                
             }
             catch (Exception e)
             {
