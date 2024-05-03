@@ -3,22 +3,22 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "kvName": {
-      "value": "StirTrekTestKv"
+      "value": "StirTrekTestKv1"
     },
     "functionAppName": {
-      "value": "DrakeStirTrekApi"
+      "value": "DrakeStirTrekApi1"
     },
     "functionAppHostingPlanName": {
-      "value": "DrakeStirTrekApiHostingPlan"
+      "value": "DrakeStirTrekApiHostingPlan1"
     },
     "storageAccountName": {
-      "value": "strirtrektestdatabase"
+      "value": "strirtrektestdatabasea"
     },
     "frontEndName": {
-      "value": "StirTrekTestFrontEnd"
+      "value": "StirTrekTestFrontEnd1"
     },
     "frontEndHostingPlanName": {
-      "value": "StirTrekTestFrontEndHostingPlan"
+      "value": "StirTrekTestFrontEndHostingPlan1"
     }
   }
 }
