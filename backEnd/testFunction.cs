@@ -20,11 +20,11 @@ namespace Company.Function
             ILogger log)
         {
        // get secrets to access cosmos db and set up cosmos db client
-            var cosmosConnectionString = "AccountEndpoint=https://freedatabasefordrake.documents.azure.com:443/;AccountKey=cd1CpwLkFrseibPiO0csqYJiZg8rpbmXvekgXalUHdqh8oY4lsr9syFNuWkTn9jONGN4M8L1WRW1ACDbS3RNeA==;";
+           try
+            { var cosmosConnectionString = "AccountEndpoint=https://freedatabasefordrake.documents.azure.com:443/;AccountKey=cd1CpwLkFrseibPiO0csqYJiZg8rpbmXvekgXalUHdqh8oY4lsr9syFNuWkTn9jONGN4M8L1WRW1ACDbS3RNeA==;";
             var cosmos = new CosmosClient(cosmosConnectionString);
             var emailsContainer = cosmos.GetContainer("freedatabase", "messages");
-            try
-            {
+            
                 // Get the contacts for the district.  Resturn 404 if none are found.
                 var query = new QueryDefinition("SELECT TOP 1 * FROM c WHERE c.Type='Message'");
                 var messages = await emailsContainer.GetItemQueryIterator<Message>(query).ReadNextAsync();
