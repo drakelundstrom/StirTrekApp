@@ -54,8 +54,8 @@ resource hostingPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   kind: ''
   properties: {}
   sku: {
-    tier: 'Free'
-    name: 'F1'
+    tier: 'Dynamic'
+    name: 'Y1'
   }
 }
 
