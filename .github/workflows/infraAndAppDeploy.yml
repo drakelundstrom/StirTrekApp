@@ -90,7 +90,7 @@ jobs:
         id: deploy-to-web-app
         uses: azure/webapps-deploy@v2
         with:
-          app-name: StirTrekTestFrontEnd
+          app-name: StirTrekTestFrontEnd1
           package: ./frontend-app
 
   build-and-deploy-back-end:
@@ -126,5 +126,5 @@ jobs:
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: DrakeStirTrekApi
+          app-name: DrakeStirTrekApi1
           package: "backEnd/output"
