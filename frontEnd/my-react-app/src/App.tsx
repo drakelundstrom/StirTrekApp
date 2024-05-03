@@ -1,14 +1,24 @@
 import { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
+import axios from "axios";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const [text, setText] = useState("");
+
+  const ClickButton = () => {
+    axios
+      .get("http://localhost:7071/api/test")
+      .then((response) => setText(response.data.text))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
-      <StyledButton onClick={() => setCount(count + 1)}>Click me</StyledButton>
-      <h1></h1>
+      <StyledButton onClick={() => ClickButton()}>Click me</StyledButton>
+      <h1>{text}</h1>
       <StyledImage
         src={"https://stirtrek.com/icons/opengraph.jpg"}
         alt="React Logo"

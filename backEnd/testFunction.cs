@@ -20,7 +20,7 @@ namespace Company.Function
             ILogger log)
         {
        // get secrets to access cosmos db and set up cosmos db client
-            var cosmosConnectionString = Environment.GetEnvironmentVariable("databaseConnectionString");
+            var cosmosConnectionString = "AccountEndpoint=https://freedatabasefordrake.documents.azure.com:443/;AccountKey=cd1CpwLkFrseibPiO0csqYJiZg8rpbmXvekgXalUHdqh8oY4lsr9syFNuWkTn9jONGN4M8L1WRW1ACDbS3RNeA==;";
             var cosmos = new CosmosClient(cosmosConnectionString);
             var emailsContainer = cosmos.GetContainer("freedatabase", "messages");
             try
