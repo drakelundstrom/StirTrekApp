@@ -8,8 +8,10 @@ function App() {
 
   const ClickButton = () => {
     axios
-      .get("http://localhost:7071/api/test")
-      .then((response) => setText(response.data.text))
+      .get(
+        "https://drakestirtrekapi1.azurewebsites.net/api/test?code=gmwN2CqxMiW2j4FJFvM2HGBef7No6EUViwVgJHm-wHhqAzFuvNo8CA=="
+      )
+      .then((response) => setText(response.data[0].text))
 
       .catch((error) => console.log(error));
   };
