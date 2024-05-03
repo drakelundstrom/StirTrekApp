@@ -10,6 +10,7 @@ function App() {
     axios
       .get("http://localhost:7071/api/test")
       .then((response) => setText(response.data.text))
+
       .catch((error) => console.log(error));
   };
 
