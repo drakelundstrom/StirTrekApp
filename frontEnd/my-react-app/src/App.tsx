@@ -4,8 +4,6 @@ import styled from "styled-components";
 import axios from "axios";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const [text, setText] = useState("");
 
   const ClickButton = () => {
